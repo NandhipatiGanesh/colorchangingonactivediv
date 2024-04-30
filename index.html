@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Color Change Example</title>
+<style>
+/* Your CSS styles */
+body {
+    transition: background-color 0.5s ease;
+}
+
+.color-change {
+    background-color: lightblue; /* Change this to the desired background color */
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="container"> <!-- This is the div whose visibility will trigger color change -->
+   <div id="container-1">
+    <h1>Welcome to My Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+    <p>Phasellus euismod, tortor eu vestibulum tincidunt, velit arcu aliquam nunc, vel dignissim justo quam nec justo.</p>
+    <p>Donec auctor, felis vel aliquet hendrerit, nunc elit tincidunt justo, nec tincidunt odio libero vel justo.</p>
+    <p>Curabitur euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+</div>
+<div id="container-2">
+    <h1>Welcome to My Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+    <p>Phasellus euismod, tortor eu vestibulum tincidunt, velit arcu aliquam nunc, vel dignissim justo quam nec justo.</p>
+    <p>Donec auctor, felis vel aliquet hendrerit, nunc elit tincidunt justo, nec tincidunt odio libero vel justo.</p>
+    <p>Curabitur euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+</div>
+<div id="container-3">
+    <h1>Welcome to My Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+    <p>Phasellus euismod, tortor eu vestibulum tincidunt, velit arcu aliquam nunc, vel dignissim justo quam nec justo.</p>
+    <p>Donec auctor, felis vel aliquet hendrerit, nunc elit tincidunt justo, nec tincidunt odio libero vel justo.</p>
+    <p>Curabitur euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+</div>
+<div id="container-4">
+    <h1>Welcome to My Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+    <p>Phasellus euismod, tortor eu vestibulum tincidunt, velit arcu aliquam nunc, vel dignissim justo quam nec justo.</p>
+    <p>Donec auctor, felis vel aliquet hendrerit, nunc elit tincidunt justo, nec tincidunt odio libero vel justo.</p>
+    <p>Curabitur euismod, justo vel tincidunt bibendum, augue libero ultrices urna, nec lacinia justo nunc in nisi.</p>
+</div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var container4 = document.getElementById("container-4");
+    var body = document.body;
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function toggleColor() {
+        if (isElementInViewport(container4)) {
+            body.classList.add("color-change");
+        } else {
+            body.classList.remove("color-change");
+        }
+    }
+
+    // Initial check
+    toggleColor();
+
+    // Listen for scroll events to toggle color
+    window.addEventListener("scroll", function() {
+        toggleColor();
+    });
+});
+
+
+</script>
+</body>
+</html>
